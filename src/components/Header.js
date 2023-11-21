@@ -19,7 +19,6 @@ function Header() {
           <a href="#">Our impact</a>
           <a href="#">Participate</a>
         </Menu>
-
         <RightMenu>
             <SearchWrapper>
                 <Search />
@@ -74,18 +73,17 @@ const Menu = styled.div`
   a {
     text-decoration: none;
     padding: 0 20px;
-    font-size:1rem;
+    font-size:1.1rem;
     font-weight: bold;
     color: white;
   }
 `
 const RightMenu = styled.div`
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 
   button {
     text-decoration: none;
-    padding-right: 20px;
     font-size:1rem;
     padding: .6rem 1.4rem;
     background: #FFA33C;
@@ -94,6 +92,11 @@ const RightMenu = styled.div`
     border: none;
     border-radius: 5rem;
     cursor: pointer;
+
+    &:hover {
+      border: 3px solid #FFA33C;
+      background: none;
+    }
   }
 
   @media (max-width: 768px){
@@ -113,7 +116,7 @@ const BurgerNav = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  background: white;
+  background: #0c1c2c;
   width: 50%;
   height: 100%;
   display: flex;
@@ -133,12 +136,13 @@ const BurgerNav = styled.div`
     display: block;
     padding: 1em 0;
     border-bottom: 1px solid gray;
-    color: black;
+    color: white;
   }
 
 `
 const CustomClose = styled(CloseIcon)`
   cursor: pointer;
+  color: white;
 `
 const CloseWrapper = styled.div`
   display: flex;
