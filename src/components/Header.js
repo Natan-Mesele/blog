@@ -11,20 +11,20 @@ function Header() {
   return (
     <Container>
         <a>
-          <img src="img/logo.svg"/>
+          <img src="img/blog-high-resolution-logo-white-transparent.png"/>
         </a>
         <Menu>
-          <a href="#">Shop</a>
-          <a href="#">Shop</a>
-          <a href="#">Shop</a>
-          <a href="#">Shop</a>
+          <a href="#">About Us</a>
+          <a href="#">Our Work</a>
+          <a href="#">Our impact</a>
+          <a href="#">Participate</a>
         </Menu>
 
         <RightMenu>
             <SearchWrapper>
                 <Search />
             </SearchWrapper>
-          <button>Sign In</button>
+          <button>Make a Donation</button>
         </RightMenu>
         <MenuWrapper>
             <CustomMenu onClick={()=>setBurgerStatus(true)}/>
@@ -33,10 +33,10 @@ function Header() {
           <CloseWrapper>
             <CustomClose onClick={()=>setBurgerStatus(false)}/>
           </CloseWrapper>
-          <li><a href="#">Used Inventory</a></li>
-          <li><a href="#">Trade-In</a></li>
-          <li><a href="#">Cybertruck</a></li>
-          <li><a href="#">Roadaster</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Our impact</a></li>
+          <li><a href="#">Participate</a></li>
         </BurgerNav>
     </Container>
   )
@@ -45,17 +45,21 @@ function Header() {
 export default Header
 
 const Container = styled.div`
-  height: 60px;
+  height: 70px;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #20262E;
-  padding: 0 20px;
+  padding: 0 30px;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1;
+
+  img {
+    width: 5em;
+    cursor: pointer;
+  }
 `
 const Menu = styled.div`
   display: flex;
@@ -71,6 +75,7 @@ const Menu = styled.div`
     text-decoration: none;
     padding: 0 20px;
     font-size:1rem;
+    font-weight: bold;
     color: white;
   }
 `
@@ -81,8 +86,8 @@ const RightMenu = styled.div`
   button {
     text-decoration: none;
     padding-right: 20px;
-    font-size:.8rem;
-    padding: .6rem 1.2rem;
+    font-size:1rem;
+    padding: .6rem 1.4rem;
     background: #FFA33C;
     font-weight: bold;
     color: white;
@@ -97,6 +102,7 @@ const RightMenu = styled.div`
 `
 const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
+  color: white;
 `
 const MenuWrapper = styled.div`
     @media (min-width: 768px){
@@ -116,6 +122,7 @@ const BurgerNav = styled.div`
   padding: 1.5em 1.5em;
   transform: ${props => props.show ? 'translateX(0)':'translateX(100%)'};
   transition: transform .6s;
+
   @media (min-width: 920px) {
     width: 30%;
   }
@@ -126,6 +133,7 @@ const BurgerNav = styled.div`
     display: block;
     padding: 1em 0;
     border-bottom: 1px solid gray;
+    color: black;
   }
 
 `
@@ -138,6 +146,7 @@ const CloseWrapper = styled.div`
 `
 const Search = styled(SearchIcon)`
   color: white;
+  cursor: pointer;
 `
 const SearchWrapper = styled.div`
   display: flex;
