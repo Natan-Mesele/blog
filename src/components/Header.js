@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Header() {
 
@@ -18,7 +19,11 @@ function Header() {
           <a href="#">Shop</a>
           <a href="#">Shop</a>
         </Menu>
+
         <RightMenu>
+            <SearchWrapper>
+                <Search />
+            </SearchWrapper>
           <button>Sign In</button>
         </RightMenu>
         <MenuWrapper>
@@ -45,6 +50,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #20262E;
   padding: 0 20px;
   top: 0;
   right: 0;
@@ -56,19 +62,21 @@ const Menu = styled.div`
   flex: 1;
   justify-content: center;
   padding-left: 110px;
+
   @media (max-width: 768px){
     display: none;
   }
 
   a {
     text-decoration: none;
-    padding: 0 10px;
-    font-size:1.2em;
-    font-weight: bold;
+    padding: 0 20px;
+    font-size:1rem;
+    color: white;
   }
 `
 const RightMenu = styled.div`
   display: flex;
+  gap: 1.5rem;
 
   button {
     text-decoration: none;
@@ -127,4 +135,11 @@ const CustomClose = styled(CloseIcon)`
 const CloseWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+`
+const Search = styled(SearchIcon)`
+  color: white;
+`
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `
