@@ -7,11 +7,22 @@ import SearchIcon from '@material-ui/icons/Search';
 function Header() {
 
     const [burgerStatus, setBurgerStatus] = useState(false);
+    const [color, setColor] = useState(false)
+
+    const changeColor = () => {
+      if(window.scrollY >= 90){
+        setColor(true)
+      }else {
+        setColor(false)
+      }
+    }
+
+    window.addEventListener('scroll', changeColor)
 
   return (
-    <Container>
+    <Container className='header-bg'>
         <a>
-          <img src="img/blog-high-resolution-logo-white-transparent.png"/>
+          <img src="img/blog-high-resolution-logo-white-transparent.png" alt="logo"/>
         </a>
         <Menu>
           <a href="#">About Us</a>
@@ -58,6 +69,9 @@ const Container = styled.div`
   img {
     width: 5em;
     cursor: pointer;
+  }
+  .header-bg {
+    background-color: black;
   }
 `
 const Menu = styled.div`

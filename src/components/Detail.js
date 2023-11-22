@@ -10,7 +10,13 @@ function Detail() {
                 <img src="img/person.jpg" />
                 <span>Natale campell</span> 
             </Info>
-            
+            <p>The internet has removed all communication barriers, creating an open world with easy, instant and endless communication practices and possibilities. We do not even need a PC to communicate online, thanks to our mobile phones. Art, knowledge and cultural processes make way across the world with much ease.
+                The internet has removed all communication barriers, creating an open world with easy, instant and endless communication practices and possibilities. We do not even need a PC to communicate online, thanks to our mobile phones. Art, knowledge and cultural processes make way across the world with much ease.
+                The internet has removed all communication barriers, creating an open world with easy, instant and endless communication practices and possibilities. We do not even need a PC to communicate online, thanks to our mobile phones. Art, knowledge and cultural processes make way across the world with much ease.
+                The internet has removed all communication barriers, creating an open world with easy, instant and endless communication practices and possibilities. We do not even need a PC to communicate online, thanks to our mobile phones. Art, knowledge and cultural processes make way across the world with much ease.
+                The internet has removed all communication barriers, creating an open world with easy, instant and endless communication practices and possibilities. We do not even need a PC to communicate online, thanks to our mobile phones. Art, knowledge and cultural processes make way across the world with much ease.
+                The internet has removed all communication barriers, creating an open world with easy, instant and endless communication practices and possibilities. We do not even need a PC to communicate online, thanks to our mobile phones. Art, knowledge and cultural processes make way across the world with much ease.
+            </p>
         </DetailInfo>
     </Container>
   )
@@ -30,7 +36,7 @@ const Container = styled.div`
 `
 const DetailInfo =styled.div`
    text-align: center;
-   padding: 0 4rem;
+   padding: 0 14rem;
 
     h1 {
         padding-top: 22rem;
@@ -45,10 +51,20 @@ const DetailInfo =styled.div`
         border-radius: 50%;
         display: flex;
     }
+
+    p {
+        text-align: left;
+        line-height: 1.8rem;
+        margin-top: 2rem
+    }
 `
 const Info = styled.div`
     display: flex;
     gap: 2rem;
     align-items: center;
     color: gray;
+
+    span {
+        font-size: 0.9rem;
+    }
 `
