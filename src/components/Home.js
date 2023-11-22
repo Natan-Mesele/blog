@@ -55,6 +55,6 @@ const ItemText = styled.div`
         }
     }
     @media(min-width: 768px){
-        padding: 10rem;
+        padding: 14rem;
     }
 `

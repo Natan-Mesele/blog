@@ -7,17 +7,6 @@ import SearchIcon from '@material-ui/icons/Search';
 function Header() {
 
     const [burgerStatus, setBurgerStatus] = useState(false);
-    const [color, setColor] = useState(false)
-
-    const changeColor = () => {
-      if(window.scrollY >= 90){
-        setColor(true)
-      }else {
-        setColor(false)
-      }
-    }
-
-    window.addEventListener('scroll', changeColor)
 
   return (
     <Container className='header-bg'>

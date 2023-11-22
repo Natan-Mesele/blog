@@ -56,6 +56,57 @@ function Section() {
             </Desc>
           </NewsInfo>
         </News>
+        <News>
+          <img src="img/background4.jpg" />
+          <NewsInfo>
+            <Date>
+              Natale campell | 28 August 2022
+            </Date>
+            <Title>
+              <Link to='./detail'>We help Group the internet</Link>
+            </Title>
+            <Desc>
+              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              </p>
+            </Desc>
+          </NewsInfo>
+        </News>
+        <News>
+          <img src="img/background4.jpg" />
+          <NewsInfo>
+            <Date>
+              Natale campell | 28 August 2022
+            </Date>
+            <Title>
+              <Link to='./detail'>We help Group the internet</Link>
+            </Title>
+            <Desc>
+              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              </p>
+            </Desc>
+          </NewsInfo>
+        </News>
+        <News>
+          <img src="img/background4.jpg" />
+          <NewsInfo>
+            <Date>
+              Natale campell | 28 August 2022
+            </Date>
+            <Title>
+              <Link to='./detail'>We help Group the internet</Link>
+            </Title>
+            <Desc>
+              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              </p>
+            </Desc>
+          </NewsInfo>
+        </News>
     </Container>
   )
 }
@@ -68,11 +119,11 @@ const Container = styled.div`
     gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     margin-top: 10rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
   }
 `
 const News = styled.div`
-  margin: 1rem;
+  margin-bottom: 10rem;
   text-align: left;
   background: #EEEDED;
   
