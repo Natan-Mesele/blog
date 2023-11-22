@@ -29,7 +29,7 @@ function Section() {
               Natale campell | 28 August 2022
             </Date>
             <Title>
-              <a href="#">We help Group the internet</a>
+              <Link to='./detail'>We help Group the internet</Link>
             </Title>
             <Desc>
               <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
@@ -46,7 +46,7 @@ function Section() {
               Natale campell | 28 August 2022
             </Date>
             <Title>
-              <a href="#">We help Group the internet</a>
+              <Link to='./detail'>We help Group the internet</Link>
             </Title>
             <Desc>
               <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
