@@ -10,6 +10,10 @@ function Home() {
             <a href="#">Learn more about us</a>
         </ItemText>
         <Section />
+        <Section />
+        <Section />
+        <Section />
+        <Section />
     </Container>
   )
 }
