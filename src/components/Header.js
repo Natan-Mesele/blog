@@ -23,7 +23,7 @@ function Header() {
             <SearchWrapper>
                 <Search />
             </SearchWrapper>
-          <button>Make a Donation</button>
+            <a href="#">Make a Donation</a>
         </RightMenu>
         <MenuWrapper>
             <CustomMenu onClick={()=>setBurgerStatus(true)}/>
@@ -81,8 +81,9 @@ const Menu = styled.div`
 const RightMenu = styled.div`
   display: flex;
   gap: 2rem;
+  align-items: center;
 
-  button {
+  a {
     text-decoration: none;
     font-size:1rem;
     padding: .6rem 1.4rem;

@@ -10,10 +10,6 @@ function Home() {
             <a href="#">Learn more about us</a>
         </ItemText>
         <Section />
-        <Section />
-        <Section />
-        <Section />
-        <Section />
     </Container>
   )
 }
@@ -47,15 +43,18 @@ const ItemText = styled.div`
         text-decoration: none;
         color: black;
         background: white;
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: .8rem 1.4rem;
         border-radius: 5em;
+        font-weight: normal;
         
         &:hover {
             background: none;
             border: 2px solid white;
             color: white;
-            font-weight: bold;
         }
+    }
+    @media(min-width: 768px){
+        padding: 10rem;
     }
 `

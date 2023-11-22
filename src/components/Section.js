@@ -1,11 +1,46 @@
 import React from 'react'
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 function Section() {
   return (
     <Container>
         <News>
-          <img src="img/background1.jpg" />
+          <img src="img/background2.jpg" />
+          <NewsInfo>
+            <Date>
+              Natale campell | 28 August 2022
+            </Date>
+            <Title>
+              <Link to='./detail'>We help Group the internet</Link>
+            </Title>
+            <Desc>
+              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              </p>
+            </Desc>
+          </NewsInfo>
+        </News>
+        <News>
+          <img src="img/background6.jpg" />
+          <NewsInfo>
+            <Date>
+              Natale campell | 28 August 2022
+            </Date>
+            <Title>
+              <a href="#">We help Group the internet</a>
+            </Title>
+            <Desc>
+              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              an electronic communications network that connects computer networks and organizational computer facilities around the world.
+              </p>
+            </Desc>
+          </NewsInfo>
+        </News>
+        <News>
+          <img src="img/background4.jpg" />
           <NewsInfo>
             <Date>
               Natale campell | 28 August 2022
@@ -28,19 +63,19 @@ function Section() {
 export default Section
 
 const Container = styled.div`
-
+   @media(min-width: 768px){
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin-top: 10rem;
+    padding: 0 2rem;
+  }
 `
-const Form = styled.div`
-    display: flex;
-    flex-direction: column;
-
-`
-
 const News = styled.div`
   margin: 1rem;
   text-align: left;
   background: #EEEDED;
-
+  
   img {
     width: 100%;
     height: 100%;
@@ -68,5 +103,8 @@ const Desc = styled.div`
   p {
     font-size: 0.9rem;
     line-height: 1.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 `
