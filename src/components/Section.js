@@ -3,110 +3,49 @@ import styled from "styled-components"
 import { Link } from "react-router-dom";
 
 function Section() {
+
+  const blogs=[
+    {
+      "id": 1,
+      'date': 'Natale campell | 28 August 2022',
+      'title': 'We help Group the internet',
+      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
+      'coverImg': 'img/background2.jpg'
+    },
+    {
+      "id": 2,
+      'date': 'Natale campell | 28 August 2022',
+      'title': 'We help Group the internet',
+      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
+      'coverImg': 'img/background3.jpg'
+    },
+    {
+      "id": 3,
+      'date': 'Natale campell | 28 August 2022',
+      'title': 'We help Group the internet',
+      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
+      'coverImg': 'img/background4.jpg'
+    },
+
+  ]
+
   return (
-    <Container>
+      <Container >
+        {blogs.map((blog) => (
         <News>
-          <img src="img/background2.jpg" />
+          <img src={blog.coverImg} />
           <NewsInfo>
             <Date>
-              Natale campell | 28 August 2022
+              <span>{blog.date}</span> 
             </Date>
             <Title>
-              <Link to='./detail'>We help Group the internet</Link>
+              <Link to='./detail'>{blog.title}</Link>
             </Title>
             <Desc>
-              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              </p>
+              <p>{blog.desc}</p>
             </Desc>
           </NewsInfo>
-        </News>
-        <News>
-          <img src="img/background6.jpg" />
-          <NewsInfo>
-            <Date>
-              Natale campell | 28 August 2022
-            </Date>
-            <Title>
-              <Link to='./detail'>We help Group the internet</Link>
-            </Title>
-            <Desc>
-              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              </p>
-            </Desc>
-          </NewsInfo>
-        </News>
-        <News>
-          <img src="img/background4.jpg" />
-          <NewsInfo>
-            <Date>
-              Natale campell | 28 August 2022
-            </Date>
-            <Title>
-              <Link to='./detail'>We help Group the internet</Link>
-            </Title>
-            <Desc>
-              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              </p>
-            </Desc>
-          </NewsInfo>
-        </News>
-        <News>
-          <img src="img/background4.jpg" />
-          <NewsInfo>
-            <Date>
-              Natale campell | 28 August 2022
-            </Date>
-            <Title>
-              <Link to='./detail'>We help Group the internet</Link>
-            </Title>
-            <Desc>
-              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              </p>
-            </Desc>
-          </NewsInfo>
-        </News>
-        <News>
-          <img src="img/background4.jpg" />
-          <NewsInfo>
-            <Date>
-              Natale campell | 28 August 2022
-            </Date>
-            <Title>
-              <Link to='./detail'>We help Group the internet</Link>
-            </Title>
-            <Desc>
-              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              </p>
-            </Desc>
-          </NewsInfo>
-        </News>
-        <News>
-          <img src="img/background4.jpg" />
-          <NewsInfo>
-            <Date>
-              Natale campell | 28 August 2022
-            </Date>
-            <Title>
-              <Link to='./detail'>We help Group the internet</Link>
-            </Title>
-            <Desc>
-              <p>an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              an electronic communications network that connects computer networks and organizational computer facilities around the world.
-              </p>
-            </Desc>
-          </NewsInfo>
-        </News>
+        </News>))}
     </Container>
   )
 }
@@ -117,19 +56,19 @@ const Container = styled.div`
    @media(min-width: 768px){
     display: grid;
     gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 10rem;
     padding: 0 4rem;
   }
 `
 const News = styled.div`
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
   text-align: left;
   background: #EEEDED;
   
   img {
     width: 100%;
-    height: 100%;
+    height: 15em;
     object-fit: cover;
   }
 `
