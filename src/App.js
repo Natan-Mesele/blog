@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Detail from './components/Detail';
-import Footer from './components/Footer';
 import {
   BrowserRouter as Router,
   Routes,

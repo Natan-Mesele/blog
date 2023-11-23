@@ -87,8 +87,8 @@ function Section() {
               })
             }
           </select>
-          <button>Reset</button>
         </Search>
+        <button>Reset</button>
         <Container >
           {blogs.map((blog) => (
           <News>
@@ -117,6 +117,17 @@ const Containers = styled.div`
     font-weight: normal;
     color: gray;
   }
+
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5rem;
+    background: #eeca4a;
+    color: white;
+    padding: .5rem 1.4rem;
+    font-size: .8rem;
+    float: center;
+   }
 `
 const Search = styled.div`
 @media(max-width: 768px){
@@ -142,16 +153,7 @@ const Search = styled.div`
     text-align: left;
    }
 
-   button {
-    cursor: pointer;
-    border: none;
-    border-radius: 5rem;
-    background: #FFA33C;
-    color: white;
-    padding: .6rem 1.4rem;
-    font-size: .8rem;
-    float: left;
-   }
+   
 `
 const SearchInput = styled.input`
   display: block;

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import Section from './Section'
+import Footer from './Footer'
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
             <a href="#">Learn more about us</a>
         </ItemText>
         <Section />
+        <Footer />
     </Container>
   )
 }

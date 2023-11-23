@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -8,8 +8,26 @@ function Header() {
 
     const [burgerStatus, setBurgerStatus] = useState(false);
 
+    const [scroll, setScroll] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <Container className='header-bg'>
+    <Container scroll={scroll}>
         <a>
           <img src="img/blog-high-resolution-logo-white-transparent.png" alt="logo"/>
         </a>
@@ -54,7 +72,9 @@ const Container = styled.div`
   right: 0;
   left: 0;
   z-index: 1;
-
+  background-color: ${({ scroll }) => (scroll ? '#0c1c2c' : 'transparent')};
+  transition: background-color 0.3s ease;
+  
   img {
     width: 5em;
     cursor: pointer;
@@ -87,7 +107,7 @@ const RightMenu = styled.div`
     text-decoration: none;
     font-size:1rem;
     padding: .6rem 1.4rem;
-    background: #FFA33C;
+    background: #eeca4a;
     font-weight: bold;
     color: white;
     border: none;
@@ -95,7 +115,7 @@ const RightMenu = styled.div`
     cursor: pointer;
 
     &:hover {
-      border: 3px solid #FFA33C;
+      border: 3px solid #eeca4a;
       background: none;
     }
   }
@@ -117,7 +137,7 @@ const BurgerNav = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  background: #0c1c2c;
+  background: white;
   width: 50%;
   height: 100%;
   display: flex;
@@ -133,17 +153,20 @@ const BurgerNav = styled.div`
 
   li a {
     text-decoration: none;
-    font-weight: bold;
     display: block;
     padding: 1em 0;
     border-bottom: 1px solid gray;
-    color: white;
+    color: black;
+
+    &:hover {
+      font-weight: bold;
+    }
   }
 
 `
 const CustomClose = styled(CloseIcon)`
   cursor: pointer;
-  color: white;
+  color: black;
 `
 const CloseWrapper = styled.div`
   display: flex;
