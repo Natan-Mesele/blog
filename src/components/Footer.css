@@ -1,0 +1,21 @@
+main {
+    background: #0B1C2D;
+}
+
+.footer {
+    background: #24366e;
+    width: 400px;
+    margin: 4rem auto;
+    border-radius: .5rem;
+    
+    .sub-text {
+        color: white;
+        padding: 2rem 1.6rem 0;
+        font-size: 15px;
+        
+    }
+}
+
+.flex {
+    padding: 2rem;
+}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import './Footer.css';
+import styled from "styled-components";
 
 
 const Footer = () => {
@@ -36,10 +38,10 @@ const Footer = () => {
   return (
     <React.Fragment>
       <main>
-        <div className="h-screen bg-black flex items-end">
-          <div className="h-60 bg-white w-full centered flex-col space-y-4">
-            <p className="capitalize text-center font-semibold text-3xl">
-              Join our Newsletter
+        <div className="footer-section">
+          <div className="footer">
+            <p className="sub-text">
+            <span>Stay connected.</span> Get news, updates, and information about ways we can all grow and protect the Internet.
             </p>
             {notification && (
               <div className='bg-green-500 h-10 text-white w-full centered'>
@@ -90,8 +92,14 @@ const Footer = () => {
           </div>
         </div>
       </main>
+      <Container>
+          
+      </Container>
     </React.Fragment>
   );
 };
 
 export default Footer;
+
+const Container = styled.div`
+`
