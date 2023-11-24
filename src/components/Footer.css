@@ -23,7 +23,6 @@ main {
     .sub-texts p {
         color: white;
         font-weight: bold;
-        
     }
 
     @media(min-width: 768px){
