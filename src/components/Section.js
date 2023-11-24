@@ -69,26 +69,6 @@ function Section() {
   ]
 
   return (
-    <Containers>
-      <h1>Latest Posts</h1>
-      <Search>
-          <SearchInput type='text' placeholder="Search by keyword"/>
-          <select>
-            {
-              dep.map(state =>{
-                return<option>{state}</option>
-              })
-            }
-          </select>
-          <select>
-            {
-              states.map(state =>{
-                return<option>{state}</option>
-              })
-            }
-          </select>
-        </Search>
-        <button>Reset</button>
         <Container >
           {blogs.map((blog) => (
           <News>
@@ -106,65 +86,11 @@ function Section() {
             </NewsInfo>
           </News>))}
         </Container>
-    </Containers>
   )
 }
 
 export default Section
 
-const Containers = styled.div`
-  h1 {
-    font-weight: normal;
-    color: gray;
-  }
-
-  button {
-    cursor: pointer;
-    border: none;
-    border-radius: 5rem;
-    background: #eeca4a;
-    color: white;
-    padding: .5rem 1.4rem;
-    font-size: .8rem;
-    float: center;
-   }
-`
-const Search = styled.div`
-@media(max-width: 768px){
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@media(min-width: 768px){
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-}
-
-   select {
-    display: block;
-    margin-bottom: 1rem;
-    padding: .5rem;
-    border-radius: .3rem;
-    outline: none;
-    width: 300px;
-    text-align: left;
-   }
-
-   
-`
-const SearchInput = styled.input`
-  display: block;
-  margin-bottom: 1rem;
-  padding: .5rem .5rem;
-  border: 1px solid gray;
-  border-radius: .3rem;
-  outline: none;
-  width: 284px;
-  text-align: left;
-`
 const Container = styled.div`
     margin: 1rem;
 

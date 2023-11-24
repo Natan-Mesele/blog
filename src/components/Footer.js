@@ -104,7 +104,20 @@ const Footer = () => {
           <Youtube style={{ fontSize: '2.5rem' }} />
           <Wifi style={{ fontSize: '2.5rem' }} />
         </Container>
-        
+        <Footers>
+            <FooterRow>
+                <h1>Address</h1>
+                <span><img src="img/location.svg" />Ethiopia, Addis abebe</span>
+                <span><img src="img/phone.svg" />+251926412563</span>
+                <span><img src="img/email.svg" />huluale12@gmail.com</span>
+            </FooterRow>
+            <FooterRow>
+              <h1>Service</h1>
+              <span>Magazine</span>
+              <span>News</span>
+              <span>Live report</span>
+            </FooterRow>
+        </Footers>
       </main>
     </React.Fragment>
   );
@@ -134,3 +147,32 @@ const LinkedIn = styled(LinkedInIcon)`
 `
 const Wifi = styled(RssFeedIcon)`
 `
+const Footers = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+`
+const FooterRow = styled.div`
+  text-align: left;
+
+  h1 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  span {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  img {
+    fill: red;
+  }
+`
+

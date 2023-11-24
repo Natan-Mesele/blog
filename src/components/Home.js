@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import Section from './Section'
 import Footer from './Footer'
+import Search from './Search'
 
 function Home() {
   return (
@@ -10,8 +11,10 @@ function Home() {
             <h1>We believe in a world where the Internet is synonymous with opportunity. We care about its future.</h1>
             <a href="#">Learn more about us</a>
         </ItemText>
+        <Search />
         <Section />
         <Footer />
+        
     </Container>
   )
 }
