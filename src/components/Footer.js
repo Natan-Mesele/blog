@@ -83,12 +83,12 @@ const Footer = () => {
                     <input
                       type="submit"
                       value="Subscribe"
-                      className="h-10 px-2 rounded-r bg-red-800 text-white font-bold  "
+                      className=" "
                     />
                   </div>
                 </div>
                 {errors.email && (
-                      <span className="text-sm text-red-500">
+                      <span className="err-message">
                         {errors.email.message}
                       </span>
                     )}

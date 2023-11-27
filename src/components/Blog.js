@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled from "styled-components"
 import { Link } from "react-router-dom";
+import './Blog.css'
 
 const blogPerPage = 8;
-const data =[
+const data = [
     {
       "id": 1,
       'date': 'Natale campell | 28 August 2022',
@@ -213,9 +214,10 @@ function Blog() {
               </Desc>
             </NewsInfo>
           </News>))}
+          
         </Container>
-      <div>
-        <button 
+      <div className='number-btn'>
+        <button className='btn'
         disabled={currentPage < 1 } onClick={() => handlePageChange(currentPage - 1)}>&lt;</button>
         {
           pageIndex.slice(
@@ -231,7 +233,7 @@ function Blog() {
             {page}
             </button>
         ))}
-        <button 
+        <button className='btn'
         disabled={currentPage > numberOfPage}
           onClick={() => handlePageChange(currentPage + 1)}>&gt;</button>
       </div>

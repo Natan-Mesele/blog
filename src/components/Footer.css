@@ -3,16 +3,20 @@ main {
 }
 
 .footer {
-    @media(min-width: 768px){
-        display: flex; 
-        
-    }
-    
+
     background: #24366e;
     width: 400px;
     margin: 4rem auto;
     border-radius: .5rem;
-    
+
+    @media(min-width: 768px){
+        display: flex; 
+    }
+    .err-message {
+        color: white;
+        display: flex;
+    }
+
     .sub-text {
         color: white;
         padding: 2rem 1.6rem 0;
