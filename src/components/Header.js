@@ -13,7 +13,7 @@ function Header() {
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setScroll(true);
-    } else {
+    } else  {
       setScroll(false);
     }
   };
