@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
-import Section from './Blog'
+import Blog from './Blog'
 import Footer from './Footer'
-import Search from './Search'
 
 function Hero() {
   return (
@@ -13,9 +12,7 @@ function Hero() {
                 <a href="#">Learn more about us</a>
             </ItemText>
         </Container>
-        
-        <Search />
-        <Section />
+        <Blog />
         <Footer />
     </Containers>
   )

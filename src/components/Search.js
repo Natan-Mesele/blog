@@ -19,11 +19,21 @@ function Search() {
       'Eroupe': ['s', 'f'],
       'North America': ['s', 'f'],
     }
+
+    
+    const [names, setNames] = useState(data)
+
+    const filterNames = e => {
+      const search = e.target.value.toLowerCase()
+      const filterNames = data.filter(names => names.username.toLowerCase().include(search))
+      setNames(filteredNames)
+    }
+
   return (
     <Container>
         <h1>Latest Posts</h1>
       <Searchs>
-          <SearchInput type='text' placeholder="Search by keyword"/>
+          <SearchInput type='text' onChange={(e) => filterNames(e)} placeholder="Search by keyword"/>
           <select>
             {
               dep.map(state =>{
