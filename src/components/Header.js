@@ -127,11 +127,12 @@ const RightMenu = styled.div`
 const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
   color: white;
+  
 `
 const MenuWrapper = styled.div`
-    @media (min-width: 768px){
+    @media (min-width: 767px){
         display: none;
-    }
+  }
 `
 const BurgerNav = styled.div`
   position: fixed;

@@ -1,26 +1,31 @@
 import React from 'react'
 import styled from "styled-components"
-import Section from './Section'
+import Section from './Blog'
 import Footer from './Footer'
 import Search from './Search'
 
-function Home() {
+function Hero() {
   return (
-    <Container>
-        <ItemText>
-            <h1>We believe in a world where the Internet is synonymous with opportunity. We care about its future.</h1>
-            <a href="#">Learn more about us</a>
-        </ItemText>
+    <Containers>
+        <Container>
+            <ItemText>
+                <h1>We believe in a world where the Internet is synonymous with opportunity. We care about its future.</h1>
+                <a href="#">Learn more about us</a>
+            </ItemText>
+        </Container>
+        
         <Search />
         <Section />
         <Footer />
-        
-    </Container>
+    </Containers>
   )
 }
 
-export default Home
+export default Hero
 
+const Containers = styled.div`
+
+`
 const Container = styled.div`
     min-height: calc(100vh - 70px);
     width: 100vw;
@@ -59,7 +64,33 @@ const ItemText = styled.div`
             color: white;
         }
     }
+    @media(min-width: 600px){
+        padding: 6rem;
+
+        h1 {
+            font-size: 1.6rem;
+        }
+    }
+
     @media(min-width: 768px){
-        padding: 14rem;
+        padding: 10rem 6rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    @media(min-width: 800px){
+        padding: 6rem 8rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    @media(min-width: 1000px){
+        padding: 14rem 8rem;
+
+        h1 {
+            font-size: 2rem;
+        }
     }
 `

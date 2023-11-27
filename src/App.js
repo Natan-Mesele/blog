@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import Home from './components/Home';
+import Hero from './components/Hero';
 import Detail from './components/Detail';
 import {
   BrowserRouter as Router,
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Header />
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/" element={<Hero />}></Route>
           <Route path="/detail" element={<Detail/>}></Route>
         </Routes>
     </div>
