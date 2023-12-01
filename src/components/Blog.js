@@ -1,243 +1,91 @@
-import React, { useState } from 'react';
-import styled from "styled-components"
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import { Link } from "react-router-dom";
 import './Blog.css'
 
-const blogPerPage = 8;
-const data = [
-    {
-      "id": 1,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und2.jpg'
-    },
-    {
-      "id": 2,
-      'date': 'Mesele Mengistu | 2 may 2022',
-      'title': 'War in Gaz',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und3.jpg'
-    },
-    {
-      "id": 3,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und4.jpg'
-    },
-    {
-      "id": 4,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und2.jpg'
-    },
-    {
-      "id": 5,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und3.jpg'
-    },
-    {
-      "id": 6,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und4.jpg'
-    },
-    {
-      "id": 7,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und4.jpg'
-    },
-    {
-      "id": 8,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und2.jpg'
-    },
-    {
-      "id": 9,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und3.jpg'
-    },
-    {
-      "id": 10,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und4.jpg'
-    },
-    {
-      "id": 7,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und4.jpg'
-    },
-    {
-      "id": 8,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und2.jpg'
-    },
-    {
-      "id": 9,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und3.jpg'
-    },
-    {
-      "id": 7,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und4.jpg'
-    },
-    {
-      "id": 8,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und2.jpg'
-    },
-    {
-      "id": 9,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und3.jpg'
-    },
-    {
-      "id": 7,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und4.jpg'
-    },
-    {
-      "id": 8,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und2.jpg'
-    },
-    {
-      "id": 9,
-      'date': 'Natale campell | 28 August 2022',
-      'title': 'We help Group the internet',
-      'desc': "an electronic communications network that connects computer networks and organizational computer facilities around the world",
-      'coverImg': 'img/und3.jpg'
-    },
+const dep = ['Category', 'Growing Internet', 'Community Network', 'Internet exchange point', 'Measuring the internet']
+const cat = {
+  'Category': ['f', 'a', 'd'],
+  'Growing Internet': ['s', 'f'],
+  'Community Network': ['s', 'f'],
+  'Internet exchange point': ['s', 'f'],
+  'Measuring the internet': ['s', 'f'],
+}
 
-  ]
-
-  const dep = ['Category', 'Growing Internet', 'Community Network', 'Internet exchange point', 'Measuring the internet']
-    const cat = {
-      'Category': ['f', 'a', 'd'],
-      'Growing Internet': ['s', 'f'],
-      'Community Network': ['s', 'f'],
-      'Internet exchange point': ['s', 'f'],
-      'Measuring the internet': ['s', 'f'],
-    }
-  
-    const states = ['Region', 'Africa', 'Asia Pacific', 'Eroupe', 'North America']
-    const region = {
-      'Region': ['f', 'a', 'd'],
-      'Africa': ['s', 'f'],
-      'Asia Pacific': ['s', 'f'],
-      'Eroupe': ['s', 'f'],
-      'North America': ['s', 'f'],
-    }
-
-  const numberOfPage = Math.ceil(data.length / blogPerPage);
-  const pageIndex = Array.from({length : numberOfPage}, (_, idx) => idx+1);
+const states = ['Region', 'Africa', 'Asia Pacific', 'Eroupe', 'North America']
+const region = {
+  'Region': ['f', 'a', 'd'],
+  'Africa': ['s', 'f'],
+  'Asia Pacific': ['s', 'f'],
+  'Eroupe': ['s', 'f'],
+  'North America': ['s', 'f'],
+}
 
 function Blog() {
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const columns = data.slice(
-  currentPage * blogPerPage,
-  (currentPage + 1) * blogPerPage
-  );
+    //fetching
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+    const [blogList, setBlogList] = useState([])
+
+    const getBlog = () => {
+        fetch("https://new-blo.prismic.io/api/v2/documents/search?ref=ZWo6ShIAAB4AOYlP#format=json")
+        .then(res => res.json())
+        .then(json => setBlogList(json.results))
+    }
+
+    useEffect(() => {
+        getBlog()
+    }, [])
+
+    console.log(blogList)
+
+    //pagination
 
   return (
-    //search
     <div className='App'>
-      <SearchContainer>
-      <h1>Latest Posts</h1>
-      <Searchs>
-          <SearchInput type='text' placeholder="Search by keyword"/>
-          <select>
-            {
-              dep.map(state =>{
-                return<option>{state}</option>
-              })
-            }
-          </select>
-          <select>
-            {
-              states.map(state =>{
-                return<option>{state}</option>
-              })
-            }
-          </select>
-        </Searchs>
-        <button>Reset</button>
+       <SearchContainer>
+        <h1>Latest Posts</h1>
+        <Searchs>
+            <SearchInput type='text' placeholder="Search by keyword"/>
+            <select>
+              {
+                dep.map(state =>{
+                  return<option>{state}</option>
+                })
+              }
+            </select>
+            <select>
+              {
+                states.map(state =>{
+                  return<option>{state}</option>
+                })
+              }
+            </select>
+          </Searchs>
+          <button>Reset</button>
       </SearchContainer>
-        <Container >
-          {columns.map((column) => (
-          <News>
-            <img src={column.coverImg} />
+      <React.Fragment>
+        <Container>
+        {blogList.map((blog, index) => (
+        <News>
+            <img src={blog.url} />
             <NewsInfo>
               <Date>
-                <span>{column.date}</span> 
+                <span>{blog.Date}</span> 
               </Date>
               <Title>
-                <Link to='./detail'>{column.title}</Link>
+                <Link to='./detail'>{blog.uid}</Link>
               </Title>
               <Desc>
-                <p>{column.desc}</p>
+                <p>{blog.Description}</p>
               </Desc>
             </NewsInfo>
           </News>))}
           
         </Container>
-      <div className='number-btn'>
-        <button className='btn'
-        disabled={currentPage < 1 } onClick={() => handlePageChange(currentPage - 1)}>&lt;</button>
-        {
-          pageIndex.slice(
-            Math.max(0, currentPage - 2), 
-            Math.min(numberOfPage, currentPage + 3)
-          )
-        .map((page) => (
-          <button 
-          key={page} 
-          onClick={() => handlePageChange(page - 1)}
-          className={page === currentPage + 1 ? "active" : "" }
-          >
-            {page}
-            </button>
-        ))}
-        <button className='btn'
-        disabled={currentPage > numberOfPage}
-          onClick={() => handlePageChange(currentPage + 1)}>&gt;</button>
-      </div>
+    </React.Fragment>
     </div>
+    
   )
 }
 
